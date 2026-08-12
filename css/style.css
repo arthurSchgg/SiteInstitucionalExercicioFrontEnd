@@ -62,7 +62,7 @@ header {
     font-size: var(--font-size-h4);
     text-decoration: none;
     color: var(--tertiary-color);
-    transition: all 0.3 ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .options-header a:hover {
@@ -209,7 +209,7 @@ header h1 {
 
 .know-about-us-img img {
     display: block;
-    width: 50%;
+    width: 100%;
 }
 
 .know-about-us-img-2 {
@@ -390,6 +390,11 @@ header h1 {
     box-sizing: border-box;
 }
 
+.title-subtitle-form {
+    display: flex;
+    flex-direction: row;
+}
+
 .title-form {
     padding: var(--padding);
     color: var(--primary-color);
@@ -410,8 +415,26 @@ header h1 {
     margin: 0 auto 20px auto;
 }
 
-.title-subtitle-form {
+
+.contact-info {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--tertiary-color);
+    font-family: var(--font-family-text);
+    font-size: var(--font-size-text);
+}
+
+.contact-info .material-symbols-outlined {
+    font-size: 20px;
+    color: var(--tertiary-color);
 }
 
 .name-complete {
@@ -560,15 +583,30 @@ header h1 {
     }
 
     .title-subtitle-form {
+        flex-direction: column;
+    }
+
+    .contact-info {
         display: none;
     }
     
 }
 
 @media (min-width: 1040px){ /*Desktop*/
-    
+    body {
+        background-color: var(--quaternary-color);
+    }
+
+    .container {
+        background-color: var(--quaternary-color);
+    }
+
     .hamburger-menu {
         display: none;
+    }
+
+    header {
+        background-color: var(--secondary-color);
     }
 
     header h1 {
@@ -600,11 +638,10 @@ header h1 {
 
     .know-about-us {
         flex-direction: row;
-        background-color: var(--secondary-color);
         border-top: 1px solid var(--border-color);
         border-bottom: 1px solid var(--border-color);
         width: calc(100% - 40px);
-        margin: 0 auto 100px auto;
+        margin: 0 auto 90px auto;
     }
 
     .introduction-button {
@@ -626,11 +663,18 @@ header h1 {
 
     .know-about-us-text {
         font-size: clamp(0.5rem, 1.5rem, 2.5rem);
-        max-width: 80%;
+        max-width: 90%;
         text-align: left;
         margin-left: 30px;
-        background-color: var(--quaternary-color);
+        background-color: #c6c5d43c;
         padding: 3px;
+    }
+
+    .our-services {
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 100px;
+        width: calc(100% - 40px);
+        margin: 0 auto 100px auto;
     }
 
     .blocks-our-services {
@@ -641,11 +685,19 @@ header h1 {
         display: flex;
         flex-direction: row;
         background-color: var(--secondary-color);
+        margin: 0 auto 100px auto;
+        max-width: 70%;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
 
     .form-contact {
         display: flex;
         flex-direction: column;
+        background-color: var(--quaternary-color);
+        max-width: 50%;
+        border-radius: 12px;
+        padding: 30px;
     }
 
     .title-subtitle-form {
@@ -653,17 +705,31 @@ header h1 {
         flex-direction: column;
     }
 
+    .title-form {
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .subtitle-form {
+        text-align: left;
+        max-width: 90%;
+        margin-left: -10px; 
+    }
+    
+
     footer {
+        background-color: var(--secondary-color);
         display: flex;
         flex-direction: row;
-        gap: 70rem;
-        align-content: center;
-        margin-bottom: 20px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 20px 25px 20px;
+        border-top: 1px solid var(--border-color);
     }
 
     .footer-company {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .footer-title {
